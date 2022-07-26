@@ -1,0 +1,17 @@
+[package]
+name = "constant-cstr"
+version = "0.1.0"
+authors = ["Keating Reid <keating.reid@pm.me>"]
+edition = "2021"
+description = "Create const instances of CStr at compile time"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Keating950/constant-cstr"
+keywords = ["const", "ffi", "proc", "macro", "c"]
+categories = ["development-tools::ffi", "rust-patterns"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "1.0.20"
+syn = "1.0.98"
