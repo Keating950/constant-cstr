@@ -1,4 +1,6 @@
 # constant-cstr
+[<img alt="crates.io" src="https://img.shields.io/crates/v/constant-cstr">](https://crates.io/crates/constant-cstr)
+[<img alt="docs.rs" src="https://img.shields.io/docsrs/constant-cstr">](https://docs.rs/constant-cstr)
 ### Create const instances of CStr at compile time
 
 `constant-cstr` exists to enable the safe creation of
