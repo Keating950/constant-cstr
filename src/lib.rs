@@ -4,17 +4,6 @@ use proc_macro::TokenStream;
 use quote::quote;
 use syn::{parse_macro_input, LitByteStr, LitStr};
 
-const fn find_first_null(bytes: &[u8]) -> Option<usize> {
-    let mut i = 0;
-    while i < bytes.len() {
-        if bytes[i] == 0 {
-            return Some(i);
-        }
-        i += 1;
-    }
-    None
-}
-
 /// `cstr` checks its input for null bytes and, if none are found, generates an [`&'static
 /// CStr`](std::ffi::CStr). It must be provided a string literal.
 /// # Examples
@@ -46,7 +35,7 @@ pub fn cstr(input: TokenStream) -> TokenStream {
     let input_clone = input.clone();
     let input_str = parse_macro_input!(input as LitStr);
     let mut input_bytes = input_str.value().into_bytes();
-    if let Some(null_idx) = find_first_null(&input_bytes) {
+    if let Some(null_idx) = input_bytes.iter().position(|n| *n == 0) {
         panic!(
             "{} contains a null byte at position {}",
             input_clone, null_idx

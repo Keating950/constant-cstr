@@ -5,6 +5,6 @@
 
 `constant-cstr` exists to enable the safe creation of
 [`CStr`](https://doc.rust-lang.org/stable/core/ffi/struct.CStr.html) instances
-at compile time, enabling safer and more efficient FFI. It leverages the
-recently added expansions to const functions to verify the absence of any
-interior null bytes.
+at compile time, enabling safer and more efficient FFI. Its only exported
+macro, `cstr`, statically checks its input for the presence of null bytes,
+avoiding the penalty of runtime verification.
