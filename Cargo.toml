@@ -6,7 +6,7 @@ edition = "2021"
 description = "Create const instances of CStr at compile time"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/Keating950/constant-cstr"
-keywords = ["const", "ffi", "proc", "macro", "c"]
+keywords = ["const", "ffi", "string", "macro", "c"]
 categories = ["development-tools::ffi", "rust-patterns"]
 
 [lib]
